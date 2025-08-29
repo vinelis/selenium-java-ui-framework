@@ -28,9 +28,9 @@ public class BaseTests {
         driver.get("https://osvaldovinelli.com.ar/");
     }
 
-//    @AfterClass
-//    public void tearDown(){
-//        driver.quit();
-//    }
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
+    }
     
 }

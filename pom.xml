@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.lucavinelli</groupId>
-    <artifactId>qa-web-ui-java</artifactId>
+    <artifactId>selenium-java-ui-framework</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

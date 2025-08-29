@@ -6,15 +6,12 @@ import org.testng.annotations.Test;
 import pages.PropertyDetail;
 import pages.SearchResultsPage;
 
-
 public class SearchAndContactTest extends BaseTests {
 
     @Test
     public void successfullSearchAndContactFlowTest(){
 
-        homePage.selectOperationType();
-        homePage.setPropertyTypeSelect();
-        homePage.setLocationTypeSelect();
+        homePage.setOperationLocationAndPropertyTypeSuccesfully();
         SearchResultsPage searchResultsPage = homePage.clickSearchButton();
 
         PropertyDetail propertyDetail = searchResultsPage.clickToPropertyDetail();
@@ -30,6 +27,5 @@ public class SearchAndContactTest extends BaseTests {
         Assert.assertEquals(propertyDetail.getFirstAndLastNameFieldText(), name, "The name field content is incorrect.");
         Assert.assertEquals(propertyDetail.getEmailFieldText(), email, "The email field content is incorrect.");
         Assert.assertEquals(propertyDetail.getPhoneNumberFieldText(), phone, "The phone number field content is incorrect.");
-
     }
 }
