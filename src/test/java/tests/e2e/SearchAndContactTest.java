@@ -11,9 +11,12 @@ public class SearchAndContactTest extends BaseTests {
     @Test
     public void successfullSearchAndContactFlowTest(){
 
-        homePage.setOperationLocationAndPropertyTypeSuccesfully();
-        SearchResultsPage searchResultsPage = homePage.clickSearchButton();
+        String operationtype = "Venta";
+        String propertyType = "Casas";
+        String locationType = "Lomas de Zamora";
 
+        homePage.setOperationLocationAndPropertyTypeSuccesfully(operationtype,propertyType, locationType);
+        SearchResultsPage searchResultsPage = homePage.clickSearchButton();
         PropertyDetail propertyDetail = searchResultsPage.clickToPropertyDetail();
 
         String name = "Luca Vinelli";

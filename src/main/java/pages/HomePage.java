@@ -15,10 +15,10 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public void setOperationLocationAndPropertyTypeSuccesfully(){
-        driver.findElement(operationTypeSelect).sendKeys("Venta");
-        driver.findElement(propertyTypeSelect).sendKeys("Casas");
-        driver.findElement(locationTypeSelect).sendKeys("Lomas de Zamora");
+    public void setOperationLocationAndPropertyTypeSuccesfully(String operationType, String propertyType, String locationType){
+        driver.findElement(operationTypeSelect).sendKeys(operationType);
+        driver.findElement(propertyTypeSelect).sendKeys(propertyType);
+        driver.findElement(locationTypeSelect).sendKeys(locationType);
     }
 
     public SearchResultsPage clickSearchButton(){
