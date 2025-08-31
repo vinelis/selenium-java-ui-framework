@@ -28,4 +28,16 @@ public class ContactFormValidationTest extends BaseTests{
                 "The email validation error message was not correct.");
 
     }
+
+    @Test
+    public void emptyRequiredFieldsValidationTest(){
+        driver.get("https://osvaldovinelli.com.ar/propiedad/526204");
+        PropertyDetail propertyDetail = new PropertyDetail(driver);
+
+        propertyDetail.submitForm();
+
+        Assert.assertEquals(propertyDetail.getNameErrortext(), "Ingresá tu nombre", "Error message for empty Name field is incorrect.");
+        Assert.assertEquals(propertyDetail.getEmailErrorText(), "Ingresá un email válido", "Error message for empty Email field is incorrect.");
+        Assert.assertEquals(propertyDetail.getPhoneErrorText(), "Ingresá tu teléfono", "Error message for empty Phone field is incorrect.");
+    }
 }

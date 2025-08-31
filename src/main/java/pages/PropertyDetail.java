@@ -14,6 +14,8 @@ public class PropertyDetail extends BasePage {
     private static final By emailField = By.id("consulta_form_email");
     private static final By phoneNumberField = By.id("consulta_form_telefono");
     private static final By emailErrorMessage = By.xpath("//*[@id='consulta_form_email_error']/span");
+    private static final By nameErrorMesssage = By.xpath("//*[@id='consulta_form_nombre_error']/span");
+    private static final By phoneErrorMessage = By.xpath("//*[@id='consulta_form_telefono_error']/span");
     private static final By submitButton = By.cssSelector("button.g-recaptcha");
 
     public PropertyDetail(WebDriver driver){
@@ -49,9 +51,18 @@ public class PropertyDetail extends BasePage {
     }
 
     public String getEmailErrorText(){
-
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(emailErrorMessage)).getText();
+    }
+
+    public String getNameErrortext(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(nameErrorMesssage)).getText();
+    }
+
+    public String getPhoneErrorText(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(phoneErrorMessage)).getText();
     }
 
 }
