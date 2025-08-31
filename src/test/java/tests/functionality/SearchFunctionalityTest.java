@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.SearchResultsPage;
 
-public class SearchFuncionalityTest extends BaseTests {
+public class SearchFunctionalityTest extends BaseTests {
 
     @Test
     public void searchForNonExistentPropertyTest(){

@@ -3,6 +3,7 @@ package pages;
 import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class HomePage extends BasePage {
 
@@ -16,9 +17,9 @@ public class HomePage extends BasePage {
     }
 
     public void setOperationLocationAndPropertyTypeSuccesfully(String operationType, String propertyType, String locationType){
-        driver.findElement(operationTypeSelect).sendKeys(operationType);
-        driver.findElement(propertyTypeSelect).sendKeys(propertyType);
-        driver.findElement(locationTypeSelect).sendKeys(locationType);
+        new Select(driver.findElement(operationTypeSelect)).selectByVisibleText(operationType);
+        new Select(driver.findElement(propertyTypeSelect)).selectByVisibleText(propertyType);
+        new Select(driver.findElement(locationTypeSelect)).selectByVisibleText(locationType);
     }
 
     public SearchResultsPage clickSearchButton(){
