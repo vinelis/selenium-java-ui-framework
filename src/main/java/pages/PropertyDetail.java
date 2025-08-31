@@ -3,12 +3,18 @@ package pages;
 import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class PropertyDetail extends BasePage {
 
     private static final By nameField = By.id("consulta_form_nombre");
     private static final By emailField = By.id("consulta_form_email");
     private static final By phoneNumberField = By.id("consulta_form_telefono");
+    private static final By emailErrorMessage = By.xpath("//*[@id='consulta_form_email_error']/span");
+    private static final By submitButton = By.cssSelector("button.g-recaptcha");
 
     public PropertyDetail(WebDriver driver){
         super(driver);
@@ -26,6 +32,10 @@ public class PropertyDetail extends BasePage {
         driver.findElement(phoneNumberField).sendKeys(phoneNumber);
     }
 
+    public void submitForm(){
+        safeClick(submitButton);
+    }
+
     public String getFirstAndLastNameFieldText(){
         return driver.findElement(nameField).getAttribute("value");
     }
@@ -36,6 +46,13 @@ public class PropertyDetail extends BasePage {
 
     public String getPhoneNumberFieldText(){
         return driver.findElement(phoneNumberField).getAttribute("value");
+    }
+
+    public String getEmailErrorText(){
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(emailErrorMessage)));
+        return driver.findElement(emailErrorMessage).getText();
     }
 
 }
