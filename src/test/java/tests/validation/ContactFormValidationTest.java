@@ -7,6 +7,11 @@ import pages.PropertyDetail;
 
 public class ContactFormValidationTest extends BaseTests{
 
+    /**
+     * Verifies that the contact form displays a specific validation error
+     * when a user enters an email with an invalid format. This test checks
+     * the client-side validation rules for the email field.
+     */
     @Test
     public void invalidEmailFormatValidationTest(){
         driver.get("https://osvaldovinelli.com.ar/propiedad/526204");
@@ -29,6 +34,11 @@ public class ContactFormValidationTest extends BaseTests{
 
     }
 
+    /**
+     * Verifies that the contact form displays the appropriate error messages
+     * for all required fields when the form is submitted empty. This test
+     * ensures that the mandatory field validation is working correctly.
+     */
     @Test
     public void emptyRequiredFieldsValidationTest(){
         driver.get("https://osvaldovinelli.com.ar/propiedad/526204");

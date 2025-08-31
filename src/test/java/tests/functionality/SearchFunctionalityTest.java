@@ -7,6 +7,11 @@ import pages.SearchResultsPage;
 
 public class SearchFunctionalityTest extends BaseTests {
 
+    /**
+     * Verifies that the application displays a clear warning message
+     * when a property search returns no results. This test ensures
+     * the system gracefully handles empty search outcomes.
+     */
     @Test
     public void searchForNonExistentPropertyTest(){
 

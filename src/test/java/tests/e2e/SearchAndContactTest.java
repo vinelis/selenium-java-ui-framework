@@ -8,6 +8,12 @@ import pages.SearchResultsPage;
 
 public class SearchAndContactTest extends BaseTests {
 
+    /**
+     * Verifies the complete end-to-end "happy path" for a user.
+     * This test simulates a user searching for a property, selecting a specific
+     * result, and successfully filling out the contact form. It asserts that
+     * the data entered into the form fields is correctly retained.
+     */
     @Test
     public void successfullSearchAndContactFlowTest(){
 
