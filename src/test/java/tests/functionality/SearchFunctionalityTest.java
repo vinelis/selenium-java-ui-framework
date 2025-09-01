@@ -20,11 +20,11 @@ public class SearchFunctionalityTest extends BaseTests {
         String propertyType = "Departamentos";
         String locationType = "Arturo Segui";
 
-        homePage.setOperationLocationAndPropertyTypeSuccesfully(operationtype, propertyType, locationType);
+        homePage.setOperationLocationAndPropertyTypeSuccessfully(operationtype, propertyType, locationType);
         SearchResultsPage searchResultsPage = homePage.clickSearchButton();
 
         String expectedMessage = "no se han encontrado resultados";
-        String actualMessage = searchResultsPage.getNoResultMesagge();
+        String actualMessage = searchResultsPage.getNoResultsMessage();
 
         Assert.assertTrue(actualMessage.contains(expectedMessage), "The 'no results' warning message was not correct or not found.");
 
@@ -41,7 +41,7 @@ public class SearchFunctionalityTest extends BaseTests {
      */
     @Test(dataProvider = "searchDataProvider")
     public void successfulSearchWithMultipleCriteriaTest(String propertyType, String location, String operation, boolean shouldFindResults){
-        homePage.setOperationLocationAndPropertyTypeSuccesfully(operation, propertyType, location);
+        homePage.setOperationLocationAndPropertyTypeSuccessfully(operation, propertyType, location);
         SearchResultsPage searchResultsPage = homePage.clickSearchButton();
 
         boolean hasNoResultsMessage = searchResultsPage.isNoResultsMessageDisplayed();

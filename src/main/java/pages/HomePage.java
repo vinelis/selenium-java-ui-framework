@@ -16,7 +16,7 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public void setOperationLocationAndPropertyTypeSuccesfully(String operationType, String propertyType, String locationType){
+    public void setOperationLocationAndPropertyTypeSuccessfully(String operationType, String propertyType, String locationType){
         new Select(driver.findElement(operationTypeSelect)).selectByVisibleText(operationType);
         new Select(driver.findElement(propertyTypeSelect)).selectByVisibleText(propertyType);
         new Select(driver.findElement(locationTypeSelect)).selectByVisibleText(locationType);

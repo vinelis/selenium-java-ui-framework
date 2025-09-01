@@ -46,7 +46,7 @@ public class ContactFormValidationTest extends BaseTests{
 
         propertyDetail.submitForm();
 
-        Assert.assertEquals(propertyDetail.getNameErrortext(), "Ingresá tu nombre", "Error message for empty Name field is incorrect.");
+        Assert.assertEquals(propertyDetail.getNameErrorText(), "Ingresá tu nombre", "Error message for empty Name field is incorrect.");
         Assert.assertEquals(propertyDetail.getEmailErrorText(), "Ingresá un email válido", "Error message for empty Email field is incorrect.");
         Assert.assertEquals(propertyDetail.getPhoneErrorText(), "Ingresá tu teléfono", "Error message for empty Phone field is incorrect.");
     }

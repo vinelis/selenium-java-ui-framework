@@ -21,7 +21,7 @@ public class SearchAndContactTest extends BaseTests {
         String propertyType = "Casas";
         String locationType = "Lomas de Zamora";
 
-        homePage.setOperationLocationAndPropertyTypeSuccesfully(operationtype,propertyType, locationType);
+        homePage.setOperationLocationAndPropertyTypeSuccessfully(operationtype,propertyType, locationType);
         SearchResultsPage searchResultsPage = homePage.clickSearchButton();
         PropertyDetail propertyDetail = searchResultsPage.clickToPropertyDetail();
 

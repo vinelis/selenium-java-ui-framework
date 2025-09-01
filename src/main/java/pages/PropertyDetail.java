@@ -55,7 +55,7 @@ public class PropertyDetail extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(emailErrorMessage)).getText();
     }
 
-    public String getNameErrortext(){
+    public String getNameErrorText(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(nameErrorMesssage)).getText();
     }

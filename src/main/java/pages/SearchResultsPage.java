@@ -18,7 +18,7 @@ public class SearchResultsPage extends BasePage {
         return new PropertyDetail(driver);
     }
 
-    public String getNoResultMesagge(){
+    public String getNoResultsMessage(){
         return driver.findElement(noResultMessage).getText();
     }
 
