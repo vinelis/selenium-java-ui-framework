@@ -21,7 +21,7 @@ jobs:
         run: mvn clean test
 
       - name: Generate Allure Report
-        uses: allure-framework/allure-action@v1
+        uses: allure-framework/allure-action@v3
         with:
           report_paths: allure-results
 
