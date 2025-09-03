@@ -54,7 +54,7 @@ public class SearchFunctionalityTest extends BaseTests {
         return new Object[][]{
                 {"Casas", "Lomas de Zamora", "Venta", true},
                 {"Departamentos", "Temperley", "Alquiler", false},
-                {"Locales", "Banfield", "Venta", false}
+                {"Locales", "Banfield", "Venta", true}
         };
     }
 }
