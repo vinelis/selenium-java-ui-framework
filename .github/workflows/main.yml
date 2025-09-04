@@ -1,5 +1,5 @@
 name: Allure Report
-run-name: ${{ github.actor }} is creating Allure report 🚀
+run-name: Allure Report • ${{ github.event.head_commit.message }}
 
 on:
   push:
