@@ -1,4 +1,4 @@
-name: Run Selenium Tests and Generate Allure Report
+name: Run Selenium Tests and Publish Allure Report
 
 on:
   push:
@@ -8,14 +8,14 @@ permissions:
   contents: write
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -23,13 +23,10 @@ jobs:
       - name: Run tests with Maven
         run: mvn clean test
 
-      - name: Generate Allure Report
-        uses: allure-framework/allure-action@v3
+      - name: Generate and Publish Allure Report
+        if: always()   # se ejecuta aunque el paso anterior falle
+        uses: simple-elf/allure-report-action@v1.7
         with:
-          report_paths: allure-results
-
-      - name: Deploy report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: allure-report
+          gh_pages: gh-pages
+          allure_results: target/allure-results
+          allure_history: allure-history
